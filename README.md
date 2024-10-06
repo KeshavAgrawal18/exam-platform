@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# **Exam Application**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an interactive **Exam Application** built using **React.js**. The app provides a controlled exam environment where users must stay in full-screen mode to avoid violations and complete the exam within a fixed time limit. Upon completion or termination, a report is shown to the user, and the option to restart the exam is provided.
 
-## Available Scripts
+## **Features**
 
-In the project directory, you can run:
+### 1. **Start Exam with Custom Alert**
 
-### `npm start`
+- Before the exam begins, a custom alert modal is displayed, asking, "Are you ready to start the exam?".
+- Once confirmed, the exam starts, and the timer countdown begins.
+- The app forces the user into full-screen mode to simulate a controlled exam environment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. **Full-Screen Mode Requirement**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- The exam can only be taken in **full-screen mode**.
+- If the user exits full-screen mode during the exam, they are warned through a custom modal alert, and a violation is counted.
 
-### `npm test`
+### 3. **Violation Handling**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- If the user exits full-screen mode during the exam, a custom alert appears warning them.
+- **Two full-screen violations** will result in automatic exam termination with a report stating the exam status as **"Terminated"** due to violations.
 
-### `npm run build`
+### 4. **Timer Countdown**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- The exam comes with a **10-minute countdown timer** (600 seconds).
+- If the timer runs out, the exam is automatically terminated with the status **"Completed"**.
+- The timer is shown in the format `MM:SS` to help the user easily track the remaining time.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 5. **Submit Exam**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Users can choose to **submit the exam** at any point by clicking the "Submit Exam" button.
+- On submission, the exam is terminated, and the status is shown as **"Terminated"**.
 
-### `npm run eject`
+### 6. **Custom Alert Modals**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- All prompts and alerts are custom modals styled with modern and professional UI.
+- Custom alert modals are used for:
+  - Starting the exam ("Are you ready to start the exam?")
+  - Violations warning ("You cannot exit full-screen mode during the exam.")
+  - Exam end alerts ("Exam completed" or "Exam terminated").
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 7. **Exam Termination**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- The exam is automatically terminated if:
+  - **Two violations** (exiting full-screen mode) occur.
+  - The user manually submits the exam.
+  - The timer runs out (10 minutes).
+- A final report is shown after termination, detailing:
+  - **Exam Status** (Completed or Terminated)
+  - **Time Remaining** (when terminated/submitted)
+  - **Number of Violations**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 8. **Restart Exam**
 
-## Learn More
+- After the exam is terminated or completed, a **"Restart Exam"** button is shown.
+- When clicked, the custom alert asks, **"Are you ready to start the exam?"**, allowing the user to restart the exam with all parameters reset (timer, violations, and status).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## **Installation**
 
-### Code Splitting
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/exam-application.git
+   ```
+2. **Navigate to the project directory:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+Copy code
+cd exam-application
+```
 
-### Analyzing the Bundle Size
+3. **Install dependencies:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+Copy code
+npm install
+```
 
-### Making a Progressive Web App
+4. **Run the application:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+Copy code
+npm start
+```
 
-### Advanced Configuration
+The application will be running at http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Exam Application
 
-### Deployment
+This is a web application designed to facilitate online exams with strict adherence to exam protocols, including full-screen requirements and violation tracking.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Table of Contents
 
-### `npm run build` fails to minify
+- [Usage](#usage)
+  - [Starting the Exam](#starting-the-exam)
+  - [During the Exam](#during-the-exam)
+  - [Ending the Exam](#ending-the-exam)
+  - [Restarting the Exam](#restarting-the-exam)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Usage
+
+### Starting the Exam:
+
+1. Click the **"Start Exam"** button.
+2. Confirm the custom modal asking if you are ready to start the exam.
+3. The exam will start, and you will be forced into full-screen mode.
+
+### During the Exam:
+
+- You must stay in full-screen mode during the exam.
+- If you exit full-screen, a violation will be counted. After two violations, the exam will automatically terminate.
+- You can click **Submit Exam** at any time to terminate and view your exam status.
+
+### Ending the Exam:
+
+- The exam ends when you either submit, the timer reaches zero, or the exam is terminated due to multiple violations.
+- After the exam ends, a summary report is shown.
+
+### Restarting the Exam:
+
+- If the exam is terminated or completed, a **"Restart Exam"** button appears.
+- Click it to restart the exam, and confirm the custom alert asking if you are ready to start the exam.
+
+## Technologies Used
+
+- **React.js**: Frontend framework used for building the application.
+- **CSS**: Styling of custom alert modals and other UI elements.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements, feel free to create a pull request or open an issue in this repository.
