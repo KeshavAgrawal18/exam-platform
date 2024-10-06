@@ -86,6 +86,11 @@ npm start
 
 The application will be running at http://localhost:3000.
 
+# Deployed Application:
+
+You can access the live version of the application deployed on Vercel at:
+https://exam-platform-zeta.vercel.app/
+
 # Exam Application
 
 This is a web application designed to facilitate online exams with strict adherence to exam protocols, including full-screen requirements and violation tracking.
